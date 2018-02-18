@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>HomePage</title>
+</head>
+    <script>
+        // Check browser support
+        if (typeof(Storage) !== "undefined") {
+            // Store
+            sessionStorage.setItem("lastname", "Smith");
+            // Retrieve
+            document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
+    </script>
+    <form action="MainPageMockUp.html">
+        <div id="content"></div>
+        <input type="text" id="topic" name="topic">
+        <input type="submit" value="CreateCollage" id="submitButton">
+    </form>
+</body>
+</html>
