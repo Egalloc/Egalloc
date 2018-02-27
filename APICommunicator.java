@@ -14,7 +14,7 @@ public class APICommunicator {
     private List<BufferedImage> images = new Vector<BufferedImage>() {
         @Override
         public boolean add(BufferedImage image) {
-            return size() < 30 && super.add(image);
+            return size() < IMAGE_NUMBER && super.add(image);
         }
     }; // needs to be thread-safe
     private BlockingDeque<URL> urls = new LinkedBlockingDeque<>();
@@ -25,6 +25,7 @@ public class APICommunicator {
     private static final int URL_TIMEOUT_LIMIT = 5000;
     private static final int THREAD_NUMBER = 40;
     private static final int SLEEP_TIME = 1000;
+    private static final int ELEMENT_PER_REQUEST = 10;
 
     public APICommunicator(String keyword) {
         this.keyword = keyword;
@@ -65,7 +66,7 @@ public class APICommunicator {
 
     // This change the request to a runnable
     private Runnable makeRequestRunnable(int startIndex) {
-        return () -> sendRequestForKeyWord(startIndex * 10 + 1);
+        return () -> sendRequestForKeyWord(startIndex * ELEMENT_PER_REQUEST + 1);
     }
 
     // This method send request for keyword to the Google Custom Search API and retrieve 10 images back.

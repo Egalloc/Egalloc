@@ -9,6 +9,7 @@ import java.util.List;
 
 public class CollageBuilder {
     private List<BufferedImage> images = new ArrayList<>();
+
     private static final int IMAGE_NUMBER = 30;
     private static final double TOTAL_AREA_RATIO = 1.5;
     private static final int BORDER_PIXEL = 3;
@@ -82,10 +83,10 @@ public class CollageBuilder {
                 g.setTransform(original);
             } else {
                 AffineTransform original = g.getTransform();
-                g.rotate(angle, PADDING_X + (i - THIRD_ROW_INDEX) * (width - PADDING_X * 2) / 10, PADDING_Y + (height - PADDING_Y * 2) * 2 / 3);
+                g.rotate(angle, PADDING_X + (i - THIRD_ROW_INDEX) * (width - PADDING_X * 2) / IMAGE_PER_ROW, PADDING_Y + (height - PADDING_Y * 2) * 2 / 3);
                 BufferedImage filler = resize(images.get(i),newWidth, newHeight);
 
-                drawImageWithCoordinate(PADDING_X + (i - THIRD_ROW_INDEX) * (width - PADDING_X * 2) / 10,PADDING_Y + (height - PADDING_Y * 2) * 2 / 3, g, filler);
+                drawImageWithCoordinate(PADDING_X + (i - THIRD_ROW_INDEX) * (width - PADDING_X * 2) / IMAGE_PER_ROW,PADDING_Y + (height - PADDING_Y * 2) * 2 / 3, g, filler);
 
                 numPixels = numPixels - newWidth * newHeight;
                 g.setTransform(original);
