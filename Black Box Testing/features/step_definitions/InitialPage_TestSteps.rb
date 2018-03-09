@@ -24,7 +24,6 @@
    
     When(/^User enters text "([^"]*)" in input box$/) do |searchArg|
 	fill_in('search-bar-input', :with => searchArg)
-	sleep(10.to_i)
     end
    
     Then(/^Prompt text disappears$/) do
@@ -32,7 +31,8 @@
     end
    
     When(/^User presses enter key$/) do
-    	  find_field("search-bar-input").native.send_key(:enter)
+    	find_field("search-bar-input").native.send_key(:enter)
+	sleep(10.to_i)
     end
 =begin
     Then(/^Build Collage process is triggered$/)
@@ -56,6 +56,7 @@
 =end
     When(/^User presses Build Collage button$/) do
 	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
     end
    
     Then(/^Build Collage button is to the right of input box$/) do
