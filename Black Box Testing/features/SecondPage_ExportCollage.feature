@@ -25,7 +25,7 @@ Feature: Export Collage Button
 
 	Background:
     Given User has navigated to localhost
-    And User is on Second Page
+    And User is on second page
   @tag1
   Scenario: Clicking on Export Collage Button allows user to download PNG of collage
   	When Export Collage Button is clicked

@@ -24,7 +24,7 @@ Feature: Functionality and display of input box on second page.
  
     Background:
     Given User has navigated to localhost
-    And User is on Second Page
+    And User is on second page
  
   @tag1
   Scenario: Correct color of input box outline

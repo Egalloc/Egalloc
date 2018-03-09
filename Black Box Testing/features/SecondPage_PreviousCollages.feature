@@ -26,7 +26,7 @@ Feature: Previously Built Collages
  
  Background:
     Given User has navigated to localhost
-    And User is on Second Page
+    And User is on second page
     And User has at least one previously built collage
    
     Scenario: All Collages previously built by the User within the session should be scaled down and shown

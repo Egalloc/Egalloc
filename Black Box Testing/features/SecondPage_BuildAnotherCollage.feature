@@ -24,7 +24,7 @@ Feature: Build Another Collage Button
  
 Background:
     Given User has navigated to localhost
-    And that User has navigated to the Second Page
+    And User is on second page
    
   @tag1
   Scenario: Correct Location of Build Another Collage Button
