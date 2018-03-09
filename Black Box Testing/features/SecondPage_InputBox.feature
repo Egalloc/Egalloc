@@ -41,6 +41,6 @@ Feature: Functionality and display of input box on second page.
     Then Prompt text disappears
        
   Scenario: Pressing enter will trigger correct process
-    When User has enters "lizard" in input box
+    When User enters text "lizard" in input box
     And User presses enter key
     Then Build collage process is triggered

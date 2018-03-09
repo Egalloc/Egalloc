@@ -54,7 +54,7 @@
     Then(/^Build Collage button becomes pressable$/)
 =end
     When(/^User presses Build Collage button$/) do
-	page.find_by_id("search-bar-submit").click_on()
+	page.find_by_id("search-bar-submit").click()
     end
    
     Then(/^Build Collage button is to the right of input box$/) do

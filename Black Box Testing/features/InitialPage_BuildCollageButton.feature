@@ -38,12 +38,12 @@ Feature: Functionality and display of the Build Collage button on initial page.
    Scenario: Correct background color of Build Collage button
     Then Background color of Build Collage button is dark gray
    
-   Scenario: Build Collage button cannot be pressed unless text is entered into the input box ##????
-    When User enters text in input box
-    Then Build Collage button becomes pressable ##??
+   Scenario: Build Collage button cannot be pressed unless text is entered into the input box
+    When User enters text "dog" in input box
+    Then Build Collage button becomes pressable
    
    Scenario: Pressing Build Collage button triggers correct process
-    When User enters text in input box
+    When User enters text "dog" in input box
     And User presses Build Collage button
     Then Build Collage process is triggered
    

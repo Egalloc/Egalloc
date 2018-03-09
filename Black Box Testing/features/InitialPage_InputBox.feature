@@ -45,6 +45,6 @@ Background:
         Then Prompt text disappears
        
     Scenario: Pressing enter will trigger correct process
-        When User enters text in input box
+        When User enters text "lizard" in input box
         And User presses enter key
         Then Build Collage process is triggered

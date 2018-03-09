@@ -48,11 +48,11 @@ Then(/^Build Another Collage button will be located underneath the Collage$/) do
 	expect(page.find_by_id("search-bar-container").native.css_value("display")).to eq "inline-block"
 end
 Then(/^Build Another Collage button will be slightly to the right of the center of the page$/) do
-	expect(page.find_by_id("search-bar-container").native.css_value("padding")).to eq "15px 0"
+	expect(page.find_by_id("search-bar-container").native.css_value("padding")).to eq "15px 0px"
 end
  
 Then(/^Background color of the Build Another Collage button will be dark grey$/) do
-	expect(page.find_by_id("search-bar-submit").native.css_value("background-color")).to eq "rgb(85, 85, 85)"
+	expect(page.find_by_id("search-bar-submit").native.css_value("background-color")).to eq "rgba(85, 85, 85, 1)"
 end
    
 Then(/^Text on Build Another Collage Button will be "Build Another Collage"$/) do
@@ -60,11 +60,11 @@ Then(/^Text on Build Another Collage Button will be "Build Another Collage"$/) d
 end
    
 Then(/^Text on Build Another Collage Button will be white$/) do
-	expect(page.find_by_id("search-bar-submit").native.css_value("color")).to eq "white"
+	expect(page.find_by_id("search-bar-submit").native.css_value("color")).to eq "rgba(255, 255, 255, 1)"
 end
        
 When(/^User clicks the Build Another Collage Button$/) do
-	page.find_by_id("search-bar-submit").click_on()
+	page.find_by_id("search-bar-submit").click()
 end
 =begin
 Then(/^Build Collage Process is triggered$/) do
@@ -74,7 +74,7 @@ end
 
 
 When(/^Export Collage Button is clicked$/) do
-	page.find_by_id("search-bar-export").click_on()
+	page.find_by_id("search-bar-export").click()
 end
 
 =begin
@@ -91,7 +91,7 @@ end
 =end
 
 Then(/^Export Collage Buttons background color is dark grey$/) do
-	expect(page.find_by_id("search-bar-export").native.css_value("background-color")).to eq "rgb(85, 85, 85)"
+	expect(page.find_by_id("search-bar-export").native.css_value("background-color")).to eq "rgba(85, 85, 85, 1)"
 end
 	
 Then(/^Export Collage Button should have the label text "Export Collage" on it$/) do
@@ -113,10 +113,13 @@ Then(/^All previously built collages are available%/) do
 end
 =end
 
-Then(/^The Previously Built Collages should be on the bottom of the page$/) do
+Then(/^The Previously Built Collages should be at the bottom of the page$/) do
 	expect(page.find_by_id("saved-collages").native.css_value("position")).to eq "relative"
 end
 
+Then(/^Title of page is "Collage for topic " "dogs"$/) do
+	expect(page.find_by_id("collage-caption").native.text).to eq "Collage for topic dogs"
+end
 =begin
 Then(/^Collage in Main Space should not be the same as any of the previously shown collages$/) do
 	
@@ -147,16 +150,22 @@ Then(/^Collages should be in a single horizontal row$/) do
 	expect(page.find_by_id("saved-collages").native.css_value("white-space")).to eq "nowrap"
 end
 
+
 Then(/^A scroll bar should appear$/) do
 	expect(page.find_by_id("saved-collages").native.css_value("overflow-x")).to eq "scroll"
 end
        
 When(/^Previously Built Collage is clicked on$/) do
-	page.find_by_id("0").click_on()
+	page.find_by_id("0").click()
 end
 
 
 Then(/^Title should include the topic of the collage that was clicked on.$/) do
 	expect(page.find_by_id("collage-caption").native.text).to eq "dogs"
+end
+
+Then(/^Input box is to the left of the Build Another Collage button$/) do
+	expect(page.find_by_id("search-bar-input").native.css_value("padding")).to eq "10px"
+	expect(page.find_by_id("search-bar-container").native.css_value("padding")).to eq "15px 0px"	
 end
 
