@@ -164,7 +164,7 @@ end
 
 
 Then(/^Title should include the topic of the collage that was clicked on.$/) do
-	expect(page.find_by_id("collage-caption").native.text).to eq "dogs"
+	expect(page.find_by_id("collage-caption").native.text).to eq "Collage for topic dogs"
 end
 
 Then(/^Input box is to the left of the Build Another Collage button$/) do
