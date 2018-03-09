@@ -1,11 +1,13 @@
 Given(/^User is on second page$/) do
         fill_in('search-bar-input', :with => "dogs")
-	find_field("search-bar-input").native.send_key(:enter)
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 end
 
 When(/^Build Collage function returns error$/) do
 	fill_in('search-bar-input', :with => "fsdnffajddh")
-	find_field("search-bar-input").native.send_key(:enter)
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 end
 
 Then(/^Error message says "Insufficient number of images found"$/) do
@@ -104,7 +106,8 @@ end
 
 Given(/^User has at least one previously built collage$/) do
 	fill_in('search-bar-input', :with => "cows")
-	find_field("search-bar-input").native.send_key(:enter)
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 end
 
 =begin
@@ -128,22 +131,22 @@ end
 =end
 Given(/^A large amount of collages are generated$/) do
 	fill_in('search-bar-input', :with => "pigs")
-	find_field("search-bar-input").native.send_key(:enter)
-
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 	fill_in('search-bar-input', :with => "snakes")
-	find_field("search-bar-input").native.send_key(:enter)
-
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 	fill_in('search-bar-input', :with => "lizards")
-	find_field("search-bar-input").native.send_key(:enter)
-
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 	fill_in('search-bar-input', :with => "monkeys")
-	find_field("search-bar-input").native.send_key(:enter)
-
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 	fill_in('search-bar-input', :with => "elephants")
-	find_field("search-bar-input").native.send_key(:enter)
-	
+	page.find_by_id("search-bar-submit").click()
+	sleep(10.to_i)
 	fill_in('search-bar-input', :with => "horses")
-	find_field("search-bar-input").native.send_key(:enter)
+	page.find_by_id("search-bar-submit").click()
 end
 
 Then(/^Collages should be in a single horizontal row$/) do

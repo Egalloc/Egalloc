@@ -24,6 +24,7 @@
    
     When(/^User enters text "([^"]*)" in input box$/) do |searchArg|
 	fill_in('search-bar-input', :with => searchArg)
+	sleep(10.to_i)
     end
    
     Then(/^Prompt text disappears$/) do
